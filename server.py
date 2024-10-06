@@ -41,9 +41,9 @@ Reponse JSON must have the following structure:
     // add more as needed
   },
   "last_month_budget": {
-    "Income": {"current": 0, "suggested": 0}
-    "Groceries": {"current": 0, "suggested": 0},
-    "Clothing": {"current": 0, "suggested": 0},
+    "Income": {"avg_last_6_months": 0, "current": 0, "suggested": 0}
+    "Groceries": {"avg_last_6_months": 0, "current": 0, "suggested": 0},
+    "Clothing": {"avg_last_6_months": 0, "current": 0, "suggested": 0},
     // the rest of the categories with values from the last month of the input and suggested values for the next month
   },
 }
@@ -107,15 +107,16 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
                 # Read the CSV data from the 'csv_data' field
                 csv_data = io.StringIO(csv_content).read()
-                # print(csv_data)
 
                 # ai_response = send_request_to_claude_ai(csv_data)
                 ai_response = send_request_to_chatgpt_ai(csv_data)
 
                 # Send a response back to the client
                 self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
                 self.end_headers()
                 self.wfile.write(ai_response.encode("utf-8"))
+                print("Returned 200 %s" % ai_response)
             else:
                 # If 'csv_data' field is missing
                 self.send_response(400)
