@@ -41,9 +41,9 @@ Reponse JSON must have the following structure:
     // add more as needed
   },
   "last_month_budget": {
-    "Income": {"current": 0, "suggested": 0}
-    "Groceries": {"current": 0, "suggested": 0},
-    "Clothing": {"current": 0, "suggested": 0},
+    "Income": {"avg_last_6_months": 0, "current": 0, "suggested": 0}
+    "Groceries": {"avg_last_6_months": 0, "current": 0, "suggested": 0},
+    "Clothing": {"avg_last_6_months": 0, "current": 0, "suggested": 0},
     // the rest of the categories with values from the last month of the input and suggested values for the next month
   },
 }
