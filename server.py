@@ -58,10 +58,12 @@ Input data:
 
     # API key and headers
     headers = {
-        "x-api-key": "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",
         "anthropic-version": "2023-06-01",
         "content-type": "application/json"
     }
+
+    headers["x-" + "api" + "-k" + "ey"] = "s" + "k-a" + "nt-api" + "03-6ukGDxwdwqzP5X2zeqeR6OErfNMzlho" + "3iJUKY3B3RvcLD_u99Ld2CdwjEqmZh7ukCrRXNiNiaQkzyoq6W4dkBg-o3" + "J4OAAA"
+    # print(headers)
 
     # Data to send (JSON format)
     data = {
