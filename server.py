@@ -58,14 +58,10 @@ Input data:
 
     # API key and headers
     headers = {
+        "x-api-key": "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",
         "anthropic-version": "2023-06-01",
         "content-type": "application/json"
     }
-
-    k = "".join(["x-", "api-", "k", "ey"])
-    v = "".join(["s", "k", "-an", "t", "-ap", "i03-1FAvQBlmgiuSMRCzhwEyYcA9WQ7JbOkp1iMZO5xeNnOUvgz6aBm1zwfFZDleh0Zojl74_", "tuiU2gOiB9KFCFLnw-5PGhXQAA"])
-    print("'%s':'%s'" % (k, v))
-    headers[k] = v
 
     # Data to send (JSON format)
     data = {
